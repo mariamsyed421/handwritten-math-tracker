@@ -14,3 +14,5 @@ img = Image.open("line1_clean.jpg").convert("RGB")  # TrOCR expects color images
 pixel_values = processor(images=img, return_tensors="pt").pixel_values  # resize + turn image into numbers
 ids = model.generate(pixel_values, max_new_tokens=50)  # predict token ids
 print(processor.batch_decode(ids, skip_special_tokens=True)[0])  # token ids -> text
+
+c
